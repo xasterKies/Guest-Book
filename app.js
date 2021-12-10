@@ -3,7 +3,7 @@ var path = require("path");
 var express = require("express")
 var logger = require("morgan")
 var bodyParser = require("body-parser");
-const { response } = require("express");
+
 
 var app = express();
 
@@ -22,7 +22,7 @@ app.use(logger("dev"))
 app.use(bodyParser.urlencoded({ extended: false }))
 
 // Routing handlers
-app.get("/", function(request, reponse) {
+app.get("/", function(request, response) {
     response.render("index")
 })
 
@@ -33,6 +33,7 @@ app.get("/new-entry", function(request, response) {
 app.post("/new-entry", function(request, response) {
     if(!request.body.title || !request.body.body) {
         response.status(400).send("Entries must have a title and a body.");
+        return;
     }
     entries.push({
         title: request.body.title,
