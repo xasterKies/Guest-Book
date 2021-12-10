@@ -45,3 +45,7 @@ app.post("/new-entry", function(request, response) {
 app.use(function(request, response) {
     response.status(404).render("404");
 })
+
+http.createServer(app).listen(3000, function() {
+    console.log("Guest-Book started on port 3000.")
+})
