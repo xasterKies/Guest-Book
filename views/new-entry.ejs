@@ -1,0 +1,19 @@
+<% include header %>
+
+<h2>Write a new entry</h2>
+
+<form method="post" role="form">
+    <div class="form-group">
+        <label for="title">Title</label>
+        <input type="text" class="form-control" id="title" name="title" placeholder="Entry book title" required>
+    </div>
+    <div class="form-group">
+        <label for="content" placeholder="Entry content text"></label>
+        <textarea name="body" placeholder="Love express! its a great tool for building websites" cols="30" rows="10"></textarea>
+    </div>
+    <div class="form-group">
+        <div class="btn btn-primary" type="submit" value="Post entry"></div>
+    </div>
+</form>
+
+<% include footer %>
